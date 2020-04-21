@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 import seaborn as sns
-import matplotlib.pyplot as plt
+import numpy as np
 def get_table_download_link(df):
     """Generates a link allowing the data in a given panda dataframe to be downloaded
     in:  dataframe
@@ -89,12 +89,16 @@ def main():
             modelo.fit(X_train, y_train)
             st.text("R quadrado = {}".format(modelo.score(X_train,y_train).round(2)))
             y_predict_train = modelo.predict(X_train)
-            sns.regplot(x = y_predict_train,y=y_train)
-            st.pyplot()
             lm = modelo.predict(X_test)
             st.text("R quadrado de teste = {}".format(metrics.r2_score(y_test,lm).round(2)))
+            sns.regplot(x = y_predict_train,y=y_train)
+            st.pyplot()
+            index = x
+            index.append('Intercept')
+            st.markdown('**Formula da Regressão Linear**')
+            st.image('formula.png', width=500)
+            st.table(pd.DataFrame(data=np.append(modelo.intercept_, modelo.coef_), index=index, columns=['Parametros']))
 
-        st.write()
 
 if __name__ == '__main__':
     main()
