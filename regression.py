@@ -20,7 +20,7 @@ def get_table_download_link(df):
 def main():
     st.title('APS Regressão Linear ')
     st.text('Gabriel Oliveira Ramos do Nascimento RA: 21022939 \nJackson do Nascimento Silva RA: 21022770 \nLaura  Damaceno de Almeida  RA: 20964736 \nVictor Hugo Kawabata Fuzaro RA: 20760102')
-
+    st.image('image.png',width= 900)
     file = st.file_uploader('Escolha seu arquivo', type='csv')
 
     if file is not None:
