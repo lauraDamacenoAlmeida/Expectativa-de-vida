@@ -14,7 +14,7 @@ O dataset utilizado foi a do [Kaggle](https://www.kaggle.com/kumarajarshi/life-e
 1. Baixar o projeto
 2. Dentro da pasta do projeto rodar o comando 
 ```
-streamlite run regression.py
+streamlit run regression.py
 ```
 3. Caso não abra uma tela no seu navegador, será exibido no console o endereço que se encontra a aplicação.
 
